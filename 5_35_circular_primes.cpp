@@ -57,7 +57,7 @@ int main()
             for (unsigned long j = 1; j < getDigit(i) and is_circle; j++) {
                 long b = a % 10;
                 long c = a / 10;
-                a = b * power(10, getDigit(i)) + c;
+                a = b * power(10, getDigit(i) - 1) + c;
                 if (not judgePrime(a)) {
                     is_circle = false;
                 }
