@@ -4,6 +4,9 @@
 
 bool judgePrime(long number)
 {
+    if (number <= 1) {
+        return false;
+    }
     long list[number];
     for (long i = 0; i < number; i++) {
         list[i] = i + 1;
@@ -53,7 +56,7 @@ int main()
             long a = i;
             for (unsigned long j = 1; j < getDigit(i) and is_circle; j++) {
                 long b = a % 10;
-                long c = b / 10;
+                long c = a / 10;
                 a = b * power(10, getDigit(i)) + c;
                 if (not judgePrime(a)) {
                     is_circle = false;
