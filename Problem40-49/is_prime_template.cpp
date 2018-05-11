@@ -2,7 +2,7 @@
 #include <boost/multiprecision/cpp_int.hpp>
 
 template <class T>
-bool is_prime(const T n)
+bool isPrime(const T n)
 {
     if (n < 4)
         return n == 2 || n == 3;
