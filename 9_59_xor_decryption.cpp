@@ -49,9 +49,16 @@ int main()
         encrypted.emplace_back(std::stoi(s));
         s = "";
     }
-    //for (const auto& n : encrypted) {
-    //std::cout << n << std::endl;
-    //}
+    std::string pass = "god";
+    std::cout << "#############################  " << static_cast<char>(pass.at(0)) << std::endl;
+    int sum = 0;
+    for (std::size_t i = 0; i < encrypted.size(); i++) {
+        std::cout << static_cast<char>(encrypted.at(i) ^ pass.at(i % 3));
+        sum += static_cast<int>(encrypted.at(i) ^ pass.at(i % 3));
+    }
+    std::cout << std::endl;
+    std::cout << "The answer is " << sum << std::endl;
+    /*
     std::array<int, 128> histogram{};
     for (const auto& n : encrypted) {
         histogram.at(n)++;
@@ -59,6 +66,7 @@ int main()
     for (int i = 0; i < 128; i++) {
         std::cout << i << " " << histogram.at(i) << std::endl;
     }
+    */
 
     return 0;
 }
